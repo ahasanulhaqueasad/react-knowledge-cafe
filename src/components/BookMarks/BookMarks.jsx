@@ -1,6 +1,6 @@
 const BookMarks = () => {
   return (
-    <div className="w-1/3 mt-10 border-2 rounded-xl">
+    <div className="w-1/3 mt-10 mb-5 border-2 rounded-xl">
       <div className="m-2 border border-[#6047EC] rounded-xl">
         <p className="text-xl font-bold p-2 text-[#6047EC]">
           Spent time on read : {}

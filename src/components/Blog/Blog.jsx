@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { CiBookmark } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
   const {
     id,
     cover,
@@ -15,7 +15,11 @@ const Blog = ({ blog }) => {
   return (
     <div className="mb-5 border-2 p-3 rounded-xl">
       <div>
-        <img className="rounded-xl" src={cover} alt="" />
+        <img
+          className="rounded-xl"
+          src={cover}
+          alt="knowledge cafe cover_image"
+        />
       </div>
       <div className="flex justify-between items-center mt-4 mb-2">
         <div className="flex items-center gap-3">
@@ -26,13 +30,24 @@ const Blog = ({ blog }) => {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <p>{reading_time}</p> <CiBookmark></CiBookmark>
+          <p>{reading_time}</p>
+          <button onClick={()=>handleAddToBookmark()}>
+            <CiBookmark></CiBookmark>
+          </button>
         </div>
       </div>
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-3xl font-bold mb-2">{title}</h2>
-          <p className="mb-5 font-bold">{hashtags}</p>
+          <p className="mb-5 font-bold">
+            {hashtags.map((hash, index) => (
+              <span key={index} className="mr-2">
+                <a href="#" className="text-blue-500 hover:underline">
+                  {hash}
+                </a>
+              </span>
+            ))}
+          </p>
         </div>
         <a className="underline font-bold text-blue-600" href="">
           Mark as read
