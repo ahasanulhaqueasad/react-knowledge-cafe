@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className=" bg-purple-100">
+    <header className=" bg-purple-100">
       <div className="navbar w-11/12 mx-auto">
         <div className="flex-1">
           <a className="btn btn-ghost text-2xl font-bold">Knowledge Cafe</a>
@@ -19,7 +19,7 @@ const Header = () => {
         </div>
       </div>
       <div className="border-b-2"></div>
-    </div>
+    </header>
   );
 };
 

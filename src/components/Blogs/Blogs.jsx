@@ -9,13 +9,13 @@ const Blogs = () => {
       .then((data) => setBlogs(data));
   }, []);
   return (
-    <div>
-      <h2>Blogs: {blogs.length}</h2>
+    <div className="w-2/3 mx-auto mt-10">
       <div>
         {blogs.map((blog) => (
           <Blog key={blog.id} blog={blog}></Blog>
         ))}
       </div>
+      
     </div>
   );
 };
