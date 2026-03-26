@@ -18,8 +18,14 @@ function App() {
     }
   };
 
-  const handleAddToReadingTime = (time) => {
+  const handleAddToReadingTime = (id, time) => {
     setReadingTime(readingTime + time);
+
+    // remove the read blog form bookmark
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id,
+    );
+    setBookmarks(remainingBookmarks);
   };
 
   return (
